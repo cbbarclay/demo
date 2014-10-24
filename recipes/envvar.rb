@@ -1,6 +1,6 @@
 # pass an env var to script
-powershell "read-env-var" do
-  cwd Chef::Config[:file_cache_path]
+powershell_script "read-env-var" do
+#  cwd Chef::Config[:file_cache_path]
   environment ({'foo' => 'BAZ'})
   code <<-EOH
   $stream = [System.IO.StreamWriter] "./test-read-env-var.txt"
